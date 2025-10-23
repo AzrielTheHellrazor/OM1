@@ -26,7 +26,7 @@ You will need the [`uv` package manager](https://docs.astral.sh/uv/getting-start
 ### Clone the Repo
 
 ```bash
-git clone https://github.com/openmind/OM1.git
+git clone https://github.com/OpenmindAGI/OM1.git
 cd OM1
 git submodule update --init
 uv venv
@@ -107,9 +107,9 @@ We'll shortly be releasing the **BOM** and details on **DIY** for the it.
 Stay tuned!
 
 Clone the following repos -
-- https://github.com/OpenMind/OM1.git
-- https://github.com/OpenMind/unitree_go2_ros2_sdk.git
-- https://github.com/OpenMind/OM1-avatar.git
+- https://github.com/OpenmindAGI/OM1.git
+- https://github.com/OpenmindAGI/unitree_go2_ros2_sdk.git
+- https://github.com/OpenmindAGI/OM1-avatar.git
 
 ## Starting the system
 To start all services, run the following commands:
