@@ -52,6 +52,19 @@ def describe_action(
 def load_action(
     action_config: T.Dict[str, T.Union[str, T.Dict[str, str]]],
 ) -> AgentAction:
+    """
+    Load and instantiate an action from configuration.
+
+    Parameters
+    ----------
+    action_config : dict
+        Configuration dictionary containing action name, connector type, and config parameters
+
+    Returns
+    -------
+    AgentAction
+        Instantiated action with interface and connector
+    """
     interface = None
     action = importlib.import_module(f"actions.{action_config['name']}.interface")
     for _, obj in action.__dict__.items():
