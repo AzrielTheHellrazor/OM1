@@ -6,6 +6,11 @@ from actions.move.interface import MoveInput
 
 
 class MoveUnitreeSDKConnector(ActionConnector[MoveInput]):
+    """
+    Connector for controlling robot movement via ROS2.
+
+    Maps movement commands to ROS2 messages for robot control systems.
+    """
 
     def __init__(self, config: ActionConfig):
         super().__init__(config)
