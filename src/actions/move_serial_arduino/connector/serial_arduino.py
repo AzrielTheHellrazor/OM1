@@ -12,6 +12,11 @@ This only works if you actually have a serial port connected to your computer, s
 
 
 class MoveSerialConnector(ActionConnector[MoveInput]):
+    """
+    Connector for controlling movement via serial connection to Arduino.
+
+    Translates movement commands into serial messages sent to an Arduino device.
+    """
 
     def __init__(self, config: ActionConfig):
         super().__init__(config)
