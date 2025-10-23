@@ -38,7 +38,7 @@ class SelfieConnector(ActionConnector[SelfieInput]):
         self.default_timeout: int = int(getattr(self.config, "timeout_sec", 15))
         self.http_timeout: float = float(getattr(self.config, "http_timeout_sec", 5.0))
 
-        self.evelenlabs_tts_provider = ElevenLabsTTSProvider()
+        self.elevenlabs_tts_provider = ElevenLabsTTSProvider()
         self.io_provider = IOProvider()
 
     def _write_status(self, line: str):
@@ -184,7 +184,7 @@ class SelfieConnector(ActionConnector[SelfieInput]):
                     f"failed reason={reason} faces={faces}",
                     time.time(),
                 )
-                self.evelenlabs_tts_provider.add_pending_message(
+                self.elevenlabs_tts_provider.add_pending_message(
                     f"Woof! Woof! I saw {faces} faces. Please make sure only your face is visible and try again."
                 )
                 return
@@ -197,14 +197,14 @@ class SelfieConnector(ActionConnector[SelfieInput]):
                 self.io_provider.add_input(
                     "SelfieStatus", "failed reason=service", time.time()
                 )
-                self.evelenlabs_tts_provider.add_pending_message(
+                self.elevenlabs_tts_provider.add_pending_message(
                     "Woof! Woof! I couldn't see you clearly. Please try again."
                 )
                 return
 
             logging.info("[Selfie] Enrolled selfie for '%s' successfully.", name)
             self.io_provider.add_input("SelfieStatus", f"ok id={name}", time.time())
-            self.evelenlabs_tts_provider.add_pending_message(
+            self.elevenlabs_tts_provider.add_pending_message(
                 f"Woof! Woof! I remember you, {name}! You are now enrolled."
             )
 
